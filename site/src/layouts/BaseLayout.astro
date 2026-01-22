@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import { site } from "../content/site";
 const { title = site.company, description = "Roof repair and replacement." } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL || '/';
 ---
 
 <html lang="en">
@@ -15,18 +17,18 @@ const { title = site.company, description = "Roof repair and replacement." } = A
     <header>
       <div class="wrap">
         <div class="logo-section">
-          <img src="/logo.png" alt="Lukasek Roofing Logo" class="logo" />
+          <img src={baseUrl + "logo.png"} alt="Lukasek Roofing Logo" class="logo" />
           <div>
             <strong class="company-name">{site.company}</strong>
             <div class="location">{site.location}</div>
           </div>
         </div>
         <nav>
-          <a href="/">Home</a>
-          <a href="/services/">Services</a>
-          <a href="/gallery/">Gallery</a>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
+          <a href={baseUrl}>Home</a>
+          <a href={baseUrl + "services/"}>Services</a>
+          <a href={baseUrl + "gallery/"}>Gallery</a>
+          <a href={baseUrl + "about/"}>About</a>
+          <a href={baseUrl + "contact/"}>Contact</a>
         </nav>
       </div>
     </header>
