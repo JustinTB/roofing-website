@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../content/site";
+import { jobs } from "../content/jobs";
+---
+
+<BaseLayout title={`Gallery | ${site.company}`} description="Photos of recent roofing jobs.">
+  <h1>Recent Work</h1>
+  <p class="muted">Add before/after photos as you complete jobs.</p>
+
+  <div class="grid">
+    {jobs.map((job) => (
+      <article class="card">
+        <h2 style="margin-top:0;">{job.title}</h2>
+        <p class="muted">{job.location} • {job.date}</p>
+        <div class="muted" style="border:1px dashed #ccc; border-radius:12px; padding:12px;">
+          Image placeholder: {job.cover}
+        </div>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

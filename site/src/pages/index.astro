@@ -1,17 +1,45 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../content/site";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title={`${site.company} | Roofing in ${site.location}`}
+  description="Roof repair, replacement, and inspections. Free estimates."
+>
+  <section class="hero">
+    <h1>Roof repair & replacement you can trust</h1>
+    <p class="muted">
+      Leak repairs, storm damage, inspections, and full replacements.
+    </p>
+
+    <div class="ctaRow">
+      <a class="cta" href={"tel:" + site.phoneLink}>Call {site.phoneDisplay}</a>
+      <a class="cta" href="/contact">Request an estimate</a>
+      <a class="cta" href="/gallery">View recent work</a>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Services</h2>
+      <ul>
+        {site.services.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Service area</h2>
+      <p class="muted">Add the towns / counties you serve here.</p>
+      <p class="muted">Example: Town A • Town B • County C</p>
+    </div>
+    <div class="card">
+      <h2>Why choose us</h2>
+      <ul>
+        <li>Licensed & insured</li>
+        <li>Clear estimates</li>
+        <li>Clean job sites</li>
+        <li>Warranty options</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

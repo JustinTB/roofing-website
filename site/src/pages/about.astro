@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../content/site";
+---
+
+<BaseLayout title={`About | ${site.company}`} description="About our roofing company.">
+  <h1>About</h1>
+  <div class="card">
+    <p>
+      Write a short, credible story: years in business, what areas you serve,
+      what you specialize in, and what customers should expect.
+    </p>
+    <p class="muted">
+      Add: license/insurance details, warranty info, and certifications if any.
+    </p>
+  </div>
+</BaseLayout>

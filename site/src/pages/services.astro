@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../content/site";
+---
+
+<BaseLayout title={`Services | ${site.company}`} description="Roofing services.">
+  <h1>Services</h1>
+  <p class="muted">Free estimates. Fast response for leaks and storm damage.</p>
+
+  <div class="grid">
+    {site.services.map((s) => (
+      <div class="card">
+        <h2 style="margin-top:0;">{s}</h2>
+        <p class="muted">
+          Add a 1–2 sentence description here (materials, warranty, process).
+        </p>
+      </div>
+    ))}
+  </div>
+</BaseLayout>

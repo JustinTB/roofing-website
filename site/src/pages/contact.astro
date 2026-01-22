@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../content/site";
+---
+
+<BaseLayout title={`Contact | ${site.company}`} description="Contact us for a free estimate.">
+  <h1>Contact</h1>
+  <p class="muted">Call or email us for a free estimate.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2 style="margin-top:0;">Call</h2>
+      <p><a class="cta" href={"tel:" + site.phoneLink}>{site.phoneDisplay}</a></p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">Email</h2>
+      <p><a class="cta" href={"mailto:" + site.email}>{site.email}</a></p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">Request an estimate</h2>
+      <p class="muted">Next step: add a contact form (serverless) to capture leads.</p>
+    </div>
+  </div>
+</BaseLayout>
