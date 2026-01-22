@@ -9,37 +9,70 @@ import { site } from "../content/site";
 >
   <section class="hero">
     <h1>Roof repair & replacement you can trust</h1>
-    <p class="muted">
+    <p class="muted" style="font-size: 1.25rem;">
       Leak repairs, storm damage, inspections, and full replacements.
     </p>
 
     <div class="ctaRow">
       <a class="cta" href={"tel:" + site.phoneLink}>Call {site.phoneDisplay}</a>
-      <a class="cta" href="/contact">Request an estimate</a>
+      <a class="cta" href="/contact" style="background-color: white; color: var(--accent);">Request an estimate</a>
       <a class="cta" href="/gallery">View recent work</a>
     </div>
   </section>
 
   <section class="grid">
     <div class="card">
-      <h2>Services</h2>
+      <h2>Our Services</h2>
       <ul>
         {site.services.map((s) => <li>{s}</li>)}
       </ul>
     </div>
     <div class="card">
-      <h2>Service area</h2>
-      <p class="muted">Add the towns / counties you serve here.</p>
-      <p class="muted">Example: Town A • Town B • County C</p>
+      <h2>Service Area</h2>
+      <p class="muted">We proudly serve:</p>
+      <p class="muted"><strong>Add the towns / counties you serve here.</strong><br/>Example: Town A • Town B • County C</p>
     </div>
     <div class="card">
-      <h2>Why choose us</h2>
+      <h2>Why Choose Us</h2>
       <ul>
         <li>Licensed & insured</li>
         <li>Clear estimates</li>
         <li>Clean job sites</li>
         <li>Warranty options</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+    <h2>Trusted by St. Louis Homeowners</h2>
+    <p class="muted" style="text-align: center; font-size: 1.1rem; margin-bottom: 32px;">
+      See why our customers trust Lukasek Roofing for their roof repair and replacement needs.
+    </p>
+    
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"If you are looking for an excellent roofing company, look no further. Their knowledge, communication and workmanship is outstanding. My roof and gutters look amazing and the attention to detail was exceptional!"</p>
+        <p class="review-author">- Kim T.</p>
+      </div>
+      
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Wes and Vinny were awesome - especially dealing with inspectors and insurance company. Roof and gutters look fantastic and work was done quickly, neatly and very efficient. Would highly recommend them."</p>
+        <p class="review-author">- Jay Skitt</p>
+      </div>
+      
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Vinny and team are incredible to work with. They made everything easy from start to finish. The crew showed up on time and were very respectful. After the job was finished, they thoroughly cleaned up my yard and driveway. Could not recommend Lukasek Roofing enough. Love my new roof!"</p>
+        <p class="review-author">- Joseph Polizzi</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 32px;">
+      <a class="cta" href={site.googleReviewsUrl} target="_blank">
+        Read More Reviews on Google
+      </a>
     </div>
   </section>
 </BaseLayout>

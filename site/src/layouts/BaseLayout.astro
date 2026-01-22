@@ -12,11 +12,14 @@ const { title = site.company, description = "Roof repair and replacement." } = A
     <meta name="description" content={description} />
   </head>
   <body>
-    <div class="wrap">
-      <header>
-        <div>
-          <strong>{site.company}</strong>
-          <div class="muted">{site.location}</div>
+    <header>
+      <div class="wrap">
+        <div class="logo-section">
+          <img src="/logo.png" alt="Lukasek Roofing Logo" class="logo" />
+          <div>
+            <strong class="company-name">{site.company}</strong>
+            <div class="location">{site.location}</div>
+          </div>
         </div>
         <nav>
           <a href="/">Home</a>
@@ -25,22 +28,26 @@ const { title = site.company, description = "Roof repair and replacement." } = A
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      <main>
+    <main>
+      <div class="wrap">
         <slot />
-      </main>
+      </div>
+    </main>
 
-      <footer>
+    <footer>
+      <div class="wrap">
         <div><strong>Contact</strong></div>
-        <div class="muted" style="margin-top:6px;">
+        <div style="margin-top:6px;">
           Phone: <a href={"tel:" + site.phoneLink}>{site.phoneDisplay}</a><br/>
           Email: <a href={"mailto:" + site.email}>{site.email}</a>
         </div>
         <p style="margin-top:10px;">
           <small>{site.tagline}</small>
         </p>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>
